@@ -6,7 +6,7 @@ import me.pjaronski.aoc.Solution
 
 fun main() = present(Solution06)
 
-object Solution06 : Solution {
+object Solution06 : Solution<String, String> {
     private fun startIndex(signal: String, distinct: Int): Int = signal.windowed(distinct) { it.toSet() }
         .indexOfFirst { it.size == distinct }
         .plus(distinct)

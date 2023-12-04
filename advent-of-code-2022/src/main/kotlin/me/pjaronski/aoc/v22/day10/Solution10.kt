@@ -9,8 +9,8 @@ import me.pjaronski.aoc.v22.day10.cpu.CRT
 
 fun main() = present(Solution10)
 
-object Solution10 : Solution {
-    override fun part1(input: Input): String {
+object Solution10 : Solution<Int, String> {
+    override fun part1(input: Input): Int {
         var signal = 0
 
         val cpu = CPU { (clock, register) ->
@@ -23,7 +23,7 @@ object Solution10 : Solution {
             .map { Command.fromString(it) }
             .forEach { cpu.execute(it) }
 
-        return signal.toString()
+        return signal
     }
 
     override fun part2(input: Input): String {

@@ -9,7 +9,7 @@ import me.pjaronski.aoc.v22.day02.rps.RockPaperScissorsHandShape.*
 
 fun main() = present(Solution02)
 
-object Solution02 : Solution {
+object Solution02 : Solution<Int, Int> {
     private fun interpret1(line: String): RockPaperScissorsGameRound {
         val player1 = when (line[0]) {
             'A' -> ROCK
@@ -52,13 +52,11 @@ object Solution02 : Solution {
         return outcome.score + round.player2.score
     }
 
-    override fun part1(input: Input): String = input.lines()
+    override fun part1(input: Input): Int = input.lines()
         .map { interpret1(it) }
         .sumOf { score(it) }
-        .toString()
 
-    override fun part2(input: Input): String = input.lines()
+    override fun part2(input: Input): Int = input.lines()
         .map { interpret2(it) }
         .sumOf { score(it) }
-        .toString()
 }

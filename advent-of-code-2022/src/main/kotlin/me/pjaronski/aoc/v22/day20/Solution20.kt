@@ -7,14 +7,14 @@ import me.pjaronski.aoc.v22.day20.chain.Chain
 
 fun main() = present(Solution20)
 
-object Solution20 : Solution {
-    override fun part1(input: Input): String {
+object Solution20 : Solution<Long, Long> {
+    override fun part1(input: Input): Long {
         val nums = input.lines().map { it.toInt() }
-        return Chain().decrypt(nums).toString()
+        return Chain().decrypt(nums)
     }
 
-    override fun part2(input: Input): String {
+    override fun part2(input: Input): Long {
         val nums = input.lines().map { it.toInt() }
-        return Chain().decrypt(nums, key = 811589153, rounds = 10).toString()
+        return Chain().decrypt(nums, key = 811589153, rounds = 10)
     }
 }

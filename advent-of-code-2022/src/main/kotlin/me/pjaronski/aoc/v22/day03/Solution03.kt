@@ -6,7 +6,7 @@ import me.pjaronski.aoc.Solution
 
 fun main() = present(Solution03)
 
-object Solution03 : Solution {
+object Solution03 : Solution<Int, Int> {
     private fun error(items: String): Char {
         val bound = items.length / 2
         val items1 = items.substring(0, bound).toSet()
@@ -29,13 +29,11 @@ object Solution03 : Solution {
         else -> throw IllegalArgumentException("Cannot determine the priority of item '$item'")
     }
 
-    override fun part1(input: Input): String = input.lines()
+    override fun part1(input: Input): Int = input.lines()
         .map { error(it) }
         .sumOf { priority(it) }
-        .toString()
 
-    override fun part2(input: Input): String = input.lines()
+    override fun part2(input: Input): Int = input.lines()
         .chunked(3) { (r1, r2, r3) -> badge(r1, r2, r3) }
         .sumOf { priority(it) }
-        .toString()
 }

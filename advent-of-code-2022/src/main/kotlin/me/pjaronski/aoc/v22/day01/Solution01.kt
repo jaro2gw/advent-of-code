@@ -7,18 +7,13 @@ import me.pjaronski.aoc.utils.split
 
 fun main() = present(Solution01)
 
-object Solution01 : Solution {
-    private fun calories(input: Input) = split(input)
-        .map { it.map(String::toInt) }
-        .map { it.sum() }
+object Solution01 : Solution<Int, Int> {
+    private fun calories(input: Input) = split(input).map { it.sumOf(String::toInt) }
 
-    override fun part1(input: Input): String = calories(input)
-        .max()
-        .toString()
+    override fun part1(input: Input): Int = calories(input).max()
 
-    override fun part2(input: Input): String = calories(input)
+    override fun part2(input: Input): Int = calories(input)
         .sortedDescending()
         .take(3)
         .sum()
-        .toString()
 }

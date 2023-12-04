@@ -14,7 +14,7 @@ fun main() = present(Solution21)
 private typealias Numbers = Map<String, Long>
 private typealias Operations = Map<String, Triple<String, Char, String>>
 
-object Solution21 : Solution {
+object Solution21 : Solution<Long, Long> {
     private const val MONKEY_NAME_PATTERN = "([a-z]{4})"
     private val MONKEY_WITH_NUMBER_REGEX = Regex(
         "$MONKEY_NAME_PATTERN: $NUMBER_PATTERN"
@@ -61,16 +61,16 @@ object Solution21 : Solution {
         }
     }
 
-    override fun part1(input: Input): String {
+    override fun part1(input: Input): Long {
         val (numbers, operations) = monkeys(input)
         val root = monkey("root", numbers, operations)
-        return root.yell().toString()
+        return root.yell()
     }
 
-    override fun part2(input: Input): String {
+    override fun part2(input: Input): Long {
         val (numbers, operations) = monkeys(input)
         val root = monkey("root", numbers, operations) as MonkeyWithOperation
         val santa = root.find("humn")!!
-        return root.figureOutWhatMonkeyShouldYell(santa).toString()
+        return root.figureOutWhatMonkeyShouldYell(santa)
     }
 }

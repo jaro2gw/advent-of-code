@@ -9,7 +9,7 @@ import me.pjaronski.aoc.v22.day16.volcano.Volcano
 
 fun main() = present(Solution16)
 
-object Solution16 : Solution {
+object Solution16 : Solution<Int, Int> {
     private const val VALVE_PATTERN = "([A-Z]{2})"
     private const val VALVE_TUNNELS_SEPARATOR = ", "
     private val VALVE_REGEX = Regex(
@@ -38,11 +38,9 @@ object Solution16 : Solution {
         )
     }
 
-    override fun part1(input: Input): String = volcano(input)
+    override fun part1(input: Input): Int = volcano(input)
         .pressure(minutes = 30)
-        .toString()
 
-    override fun part2(input: Input): String = volcano(input)
+    override fun part2(input: Input): Int = volcano(input)
         .pressure(minutes = 26, workers = 2)
-        .toString()
 }

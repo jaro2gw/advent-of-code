@@ -11,7 +11,7 @@ import kotlin.math.max
 
 fun main() = present(Solution05)
 
-object Solution05 : Solution {
+object Solution05 : Solution<String, String> {
     private val OPERATION_REGEX = Regex("move (\\d+) from (\\d+) to (\\d+)")
     private val CRATE_REGEX = Regex("\\[(.)]")
 

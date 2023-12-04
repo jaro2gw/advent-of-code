@@ -8,10 +8,9 @@ import org.junit.jupiter.api.Test
 
 fun main() = present(Solution19, Input(Solution19Test::class.java, "example.txt"))
 
-class Solution19Test : SolutionTest() {
-    override val solution = Solution19
-    override val expected1 = "33"
-    override val expected2 = "3472"
+class Solution19Test : SolutionTest<Int, Int>(Solution19) {
+    override val expected1 = 33
+    override val expected2 = 3472
 
     @Test
     @Disabled(

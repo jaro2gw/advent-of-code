@@ -9,7 +9,7 @@ import me.pjaronski.aoc.v22.day17.rock.RockShape.Companion.shapes
 
 fun main() = present(Solution17)
 
-object Solution17 : Solution {
+object Solution17 : Solution<Int, Long> {
     private fun moves(input: Input): List<RockMove> = input.lines()
         .first()
         .map {
@@ -20,19 +20,17 @@ object Solution17 : Solution {
             }
         }
 
-    override fun part1(input: Input): String = RockChamber(
+    override fun part1(input: Input): Int = RockChamber(
         width = 7,
         shapes = shapes,
         moves = moves(input)
     )
         .height(2022)
-        .toString()
 
-    override fun part2(input: Input): String = RockChamber(
+    override fun part2(input: Input): Long = RockChamber(
         width = 7,
         shapes = shapes,
         moves = moves(input)
     )
         .height(1_000_000_000_000L)
-        .toString()
 }

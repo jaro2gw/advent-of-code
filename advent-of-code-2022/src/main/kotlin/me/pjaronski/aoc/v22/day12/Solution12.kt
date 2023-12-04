@@ -9,7 +9,7 @@ import me.pjaronski.aoc.v22.day12.grid.PathFinder
 
 fun main() = present(Solution12)
 
-object Solution12 : Solution {
+object Solution12 : Solution<Int, Int> {
     private fun grid(input: Input): Grid {
         var start: Coords? = null
         var end: Coords? = null
@@ -43,13 +43,13 @@ object Solution12 : Solution {
         return Grid(elevation, start!!, end!!)
     }
 
-    override fun part1(input: Input): String {
+    override fun part1(input: Input): Int {
         val grid = grid(input)
-        return PathFinder().shortestUp(grid).toString()
+        return PathFinder().shortestUp(grid)
     }
 
-    override fun part2(input: Input): String {
+    override fun part2(input: Input): Int {
         val grid = grid(input)
-        return PathFinder().shortestDown(grid).toString()
+        return PathFinder().shortestDown(grid)
     }
 }

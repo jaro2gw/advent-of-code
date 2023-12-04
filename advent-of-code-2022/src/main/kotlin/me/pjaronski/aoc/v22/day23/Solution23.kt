@@ -9,7 +9,7 @@ import me.pjaronski.aoc.v22.day23.elves.Elves
 
 fun main() = present(Solution23)
 
-object Solution23 : Solution {
+object Solution23 : Solution<Int, Int> {
     private fun elves(input: Input): Set<Coords> = input.lines()
         .flatMapIndexed { row, line ->
             line.withIndex()
@@ -28,7 +28,7 @@ object Solution23 : Solution {
             (rows1 + rows2) to (cols1 + cols2)
         }
 
-    override fun part1(input: Input): String {
+    override fun part1(input: Input): Int {
         val elves = elves(input)
         val (rows, cols) = Elves().simulate(elves)
             .take(10)
@@ -36,17 +36,15 @@ object Solution23 : Solution {
             .let { minmax(it) }
         val width = cols.max - cols.min + 1
         val height = rows.max - rows.min + 1
-        val empty = width * height - elves.size
-        return empty.toString()
+        return width * height - elves.size
     }
 
-    override fun part2(input: Input): String {
+    override fun part2(input: Input): Int {
         val elves = elves(input)
         val index = Elves().simulate(elves)
             .withIndex()
             .map { (index, _) -> index }
             .last()
-        val round = index + 2
-        return round.toString()
+        return index + 2
     }
 }

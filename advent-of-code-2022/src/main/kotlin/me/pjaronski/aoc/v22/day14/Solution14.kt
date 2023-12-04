@@ -8,7 +8,7 @@ import me.pjaronski.aoc.v22.day14.cave.Cave
 
 fun main() = present(Solution14)
 
-object Solution14 : Solution {
+object Solution14 : Solution<Int, Int> {
     private fun rocks(input: Input): List<List<Coords>> = input.lines()
         .map { line ->
             line.split(" -> ")
@@ -18,19 +18,17 @@ object Solution14 : Solution {
                 }
         }
 
-    override fun part1(input: Input): String = Cave(
+    override fun part1(input: Input): Int = Cave(
         rocks = rocks(input),
         leak = Coords(0, 500),
         bottom = false
     )
         .fill()
-        .toString()
 
-    override fun part2(input: Input): String = Cave(
+    override fun part2(input: Input): Int = Cave(
         rocks = rocks(input),
         leak = Coords(0, 500),
         bottom = true
     )
         .fill()
-        .toString()
 }

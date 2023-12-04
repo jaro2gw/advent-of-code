@@ -9,7 +9,7 @@ import me.pjaronski.aoc.v22.day11.monkey.Monkey
 
 fun main() = present(Solution11)
 
-object Solution11 : Solution {
+object Solution11 : Solution<Long, Long> {
     private val MONKEY_REGEX_INDEX = Regex("Monkey $NUMBER_PATTERN:")
     private val MONKEY_REGEX_ITEMS = Regex("Starting items: (($NUMBER_PATTERN(, )?)+)")
     private val MONKEY_REGEX_OPERATION = Regex("Operation: new = old ([+*]) (old|$NUMBER_PATTERN)")
@@ -64,7 +64,7 @@ object Solution11 : Solution {
         return monkeys
     }
 
-    private fun turns(input: Input, turns: Int, divide: Long): String {
+    private fun turns(input: Input, turns: Int, divide: Long): Long {
         val monkeys = monkeys(input, divide)
 
         repeat(turns) {
@@ -75,10 +75,9 @@ object Solution11 : Solution {
             .sortedDescending()
             .take(2)
             .reduce { m1, m2 -> m1 * m2 }
-            .toString()
     }
 
-    override fun part1(input: Input): String = turns(input, 20, 3L)
+    override fun part1(input: Input) = turns(input, 20, 3L)
 
-    override fun part2(input: Input): String = turns(input, 10_000, 1L)
+    override fun part2(input: Input) = turns(input, 10_000, 1L)
 }

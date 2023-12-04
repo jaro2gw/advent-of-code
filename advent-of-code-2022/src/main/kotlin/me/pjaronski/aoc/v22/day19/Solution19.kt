@@ -13,7 +13,7 @@ import me.pjaronski.aoc.v22.day19.resource.ResourceArray
 
 fun main() = present(Solution19)
 
-object Solution19 : Solution {
+object Solution19 : Solution<Int, Int> {
     private val ROBOT_FACTORY_BLUEPRINT_ID_REGEX = Regex("Blueprint $NUMBER_PATTERN:")
     private val ROBOT_BLUEPRINT_REGEX = Regex(
         "Each (ore|clay|obsidian|geode) robot costs $NUMBER_PATTERN ore( and $NUMBER_PATTERN clay)?( and $NUMBER_PATTERN obsidian)?\\."
@@ -36,19 +36,16 @@ object Solution19 : Solution {
             RobotFactory(id, blueprints)
         }
 
-    override fun part1(input: Input): String {
+    override fun part1(input: Input): Int {
         val excavation = Excavation()
-        return factories(input)
-            .sumOf { it.id * excavation.run(it, 24) }
-            .toString()
+        return factories(input).sumOf { it.id * excavation.run(it, 24) }
     }
 
-    override fun part2(input: Input): String {
+    override fun part2(input: Input): Int {
         val excavation = Excavation()
         return factories(input)
             .take(3)
             .map { excavation.run(it, 32) }
             .reduce(Int::times)
-            .toString()
     }
 }

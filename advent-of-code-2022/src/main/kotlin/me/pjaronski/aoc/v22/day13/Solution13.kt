@@ -11,8 +11,8 @@ import me.pjaronski.aoc.v22.day13.packet.PacketTokenizer
 
 fun main() = present(Solution13)
 
-object Solution13 : Solution {
-    override fun part1(input: Input): String {
+object Solution13 : Solution<Int, Int> {
+    override fun part1(input: Input): Int {
         val tokenizer = PacketTokenizer()
         val parser = PacketParser(tokenizer)
 
@@ -29,10 +29,9 @@ object Solution13 : Solution {
             }
             .filter { (_, p1, p2) -> p1 < p2 }
             .sumOf { (idx, _, _) -> idx }
-            .toString()
     }
 
-    override fun part2(input: Input): String {
+    override fun part2(input: Input): Int {
         val tokenizer = PacketTokenizer()
         val parser = PacketParser(tokenizer)
 
@@ -52,7 +51,6 @@ object Solution13 : Solution {
         val idx2 = packets.indexOf(div2) + 1
         val idx6 = packets.indexOf(div6) + 1
 
-        val decoder = idx2 * idx6
-        return decoder.toString()
+        return idx2 * idx6
     }
 }

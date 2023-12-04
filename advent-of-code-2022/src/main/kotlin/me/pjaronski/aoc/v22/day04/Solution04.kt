@@ -7,7 +7,7 @@ import me.pjaronski.aoc.v22.day04.section.SectionRange
 
 fun main() = present(Solution04)
 
-object Solution04 : Solution {
+object Solution04 : Solution<Int, Int> {
     private val SECTIONS = Regex("^(\\d+)-(\\d+),(\\d+)-(\\d+)$")
 
     private fun sections(line: String): Pair<SectionRange, SectionRange> {
@@ -19,13 +19,11 @@ object Solution04 : Solution {
         return SectionRange(s1, e1) to SectionRange(s2, e2)
     }
 
-    override fun part1(input: Input): String = input.lines()
+    override fun part1(input: Input): Int = input.lines()
         .map { sections(it) }
         .count { (s1, s2) -> s1 in s2 || s2 in s1 }
-        .toString()
 
-    override fun part2(input: Input): String = input.lines()
+    override fun part2(input: Input): Int = input.lines()
         .map { sections(it) }
         .count { (s1, s2) -> s1 overlaps s2 }
-        .toString()
 }

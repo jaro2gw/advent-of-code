@@ -8,7 +8,7 @@ import me.pjaronski.aoc.v22.day08.trees.TreesEvaluator
 
 fun main() = present(Solution08)
 
-object Solution08 : Solution {
+object Solution08 : Solution<Int, Int> {
     private fun makeTreeMap(lines: Iterable<String>): Trees = lines
         .map { line ->
             line.map { char -> char - '0' }
@@ -17,13 +17,13 @@ object Solution08 : Solution {
         .toTypedArray()
         .let { Trees(it) }
 
-    override fun part1(input: Input): String {
+    override fun part1(input: Input): Int {
         val trees = makeTreeMap(input.lines())
-        return TreesEvaluator().visibleTrees(trees).toString()
+        return TreesEvaluator().visibleTrees(trees)
     }
 
-    override fun part2(input: Input): String {
+    override fun part2(input: Input): Int {
         val trees = makeTreeMap(input.lines())
-        return TreesEvaluator().scenicScore(trees).toString()
+        return TreesEvaluator().scenicScore(trees)
     }
 }

@@ -13,7 +13,7 @@ fun main() = present(solution = Solution15(row = 2_000_000, bound = 4_000_000))
 class Solution15(
     private val row: Int,
     private val bound: Int
-) : Solution {
+) : Solution<Int, Long> {
     private val SENSOR_REGEX = Regex(
         "Sensor at x=$NUMBER_PATTERN, y=$NUMBER_PATTERN: closest beacon is at x=$NUMBER_PATTERN, y=$NUMBER_PATTERN"
     )
@@ -29,22 +29,22 @@ class Solution15(
         }
         .toList()
 
-    override fun part1(input: Input): String {
+    override fun part1(input: Input): Int {
         val row = SensorRow(row)
 
         coords(input).forEach { (sensor, beacon) ->
             row.add(sensor, beacon)
         }
 
-        return row.size().toString()
+        return row.size()
     }
 
-    override fun part2(input: Input): String {
+    override fun part2(input: Input): Long {
         val map = SensorMap(0, bound)
         coords(input).forEach { (sensor, beacon) ->
             map.add(sensor, beacon)
         }
         val (row, col) = map.missingBeacon()
-        return (col * 4_000_000L + row).toString()
+        return col * 4_000_000L + row
     }
 }

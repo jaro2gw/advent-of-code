@@ -23,7 +23,7 @@ fun main() = present(
     )
 )
 
-class Solution22(private val transitions: Input) : Solution {
+class Solution22(private val transitions: Input) : Solution<Int, Int> {
     private val MOVE_REGEX = Regex(NUMBER_PATTERN)
     private val TURN_REGEX = Regex("([LR])")
     private val DIRECTION_PATTERN = "(NORTH|EAST|SOUTH|WEST)"
@@ -116,16 +116,16 @@ class Solution22(private val transitions: Input) : Solution {
 
     private fun score(coords: Coords, direction: Direction): Int = score(coords) + score(direction)
 
-    override fun part1(input: Input): String {
+    override fun part1(input: Input): Int {
         val (tiles, moves, turns) = convert(input)
         val (coords, direction) = Board(tiles).endpoint(moves, turns)
-        return score(coords, direction).toString()
+        return score(coords, direction)
     }
 
-    override fun part2(input: Input): String {
+    override fun part2(input: Input): Int {
         val (tiles, moves, turns) = convert(input)
         val transitions = precomputeTransitions()
         val (coords, direction) = Cube(tiles, transitions::getValue).endpoint(moves, turns)
-        return score(coords, direction).toString()
+        return score(coords, direction)
     }
 }

@@ -11,7 +11,7 @@ import me.pjaronski.aoc.v22.day24.blizzard.Vortex
 
 fun main() = present(Solution24)
 
-object Solution24 : Solution {
+object Solution24 : Solution<Int, Int> {
     private fun direction(char: Char): Direction = when (char) {
         '^' -> NORTH
         '>' -> EAST
@@ -41,7 +41,7 @@ object Solution24 : Solution {
         return Blizzard(rows, cols) to vortexes
     }
 
-    override fun part1(input: Input): String {
+    override fun part1(input: Input): Int {
         val (blizzard, vortexes) = convert(input)
         val start = Coords(
             row = 0,
@@ -52,10 +52,10 @@ object Solution24 : Solution {
             col = blizzard.cols - 2,
         )
         val (_, minutes) = blizzard.quickestPath(vortexes, start, end)
-        return minutes.toString()
+        return minutes
     }
 
-    override fun part2(input: Input): String {
+    override fun part2(input: Input): Int {
         val (blizzard, vortexes1) = convert(input)
         val start = Coords(
             row = 0,
@@ -69,7 +69,6 @@ object Solution24 : Solution {
         val (vortexes3, trip2) = blizzard.quickestPath(vortexes2, end, start)
         val (_, trip3) = blizzard.quickestPath(vortexes3, start, end)
 
-        val total = trip1 + trip2 + trip3
-        return total.toString()
+        return trip1 + trip2 + trip3
     }
 }

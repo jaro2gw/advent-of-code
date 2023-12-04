@@ -9,7 +9,7 @@ import me.pjaronski.aoc.v22.day18.lava.LavaScan
 
 fun main() = present(Solution18)
 
-object Solution18 : Solution {
+object Solution18 : Solution<Int, Int> {
     private val LAVA_DROPLET_REGEX = Regex("$NUMBER_PATTERN,$NUMBER_PATTERN,$NUMBER_PATTERN")
 
     private fun droplets(input: Input): Set<LavaDroplet> = input.lines()
@@ -24,13 +24,13 @@ object Solution18 : Solution {
         }
         .toSet()
 
-    override fun part1(input: Input): String {
+    override fun part1(input: Input): Int {
         val droplets = droplets(input)
-        return LavaScan().sides(droplets).toString()
+        return LavaScan().sides(droplets)
     }
 
-    override fun part2(input: Input): String {
+    override fun part2(input: Input): Int {
         val droplets = droplets(input)
-        return LavaScan().sidesWithoutBubbles(droplets).toString()
+        return LavaScan().sidesWithoutBubbles(droplets)
     }
 }
