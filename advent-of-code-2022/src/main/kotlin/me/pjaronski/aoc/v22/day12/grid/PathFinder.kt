@@ -13,7 +13,7 @@ class PathFinder {
     ) {
         val elev = grid[coords]
         val dist = distance[coords] + 1
-        Coords.immediateNeighbours(coords)
+        coords.neighbours(diagonal = false)
             .filter { it in grid }
             .filter { distance[it] > dist }
             .filter { predicate(elev, grid[it]) }

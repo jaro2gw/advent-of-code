@@ -26,20 +26,31 @@ data class Coords(
                 dc = col != end.col
                 if (dr) row += r
                 if (dc) col += c
-            }
-            while (dr || dc)
+            } while (dr || dc)
         }
 
         fun manhattanDistance(start: Coords, end: Coords): Int {
             return abs(end.row - start.row) + abs(end.col - start.col)
         }
+    }
 
-        fun immediateNeighbours(coords: Coords): List<Coords> = listOf(
-            coords.copy(row = coords.row - 1),
-            coords.copy(row = coords.row + 1),
-            coords.copy(col = coords.col - 1),
-            coords.copy(col = coords.col + 1),
-        )
+
+    fun neighbours(axis: Boolean = true, diagonal: Boolean = true, self: Boolean = false): Sequence<Coords> = sequence {
+        if (axis) {
+            yield(copy(row = row - 1))
+            yield(copy(row = row + 1))
+            yield(copy(col = col - 1))
+            yield(copy(col = col + 1))
+        }
+        if (diagonal) {
+            yield(copy(row = row - 1, col = col - 1))
+            yield(copy(row = row - 1, col = col + 1))
+            yield(copy(row = row + 1, col = col - 1))
+            yield(copy(row = row + 1, col = col + 1))
+        }
+        if (self) {
+            yield(copy())
+        }
     }
 
     operator fun plus(coords: Coords) = Coords(

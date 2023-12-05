@@ -66,8 +66,7 @@ class Blizzard(
             val valley = valley(vortexes)
             options = options
                 .flatMap { coords ->
-                    Coords.immediateNeighbours(coords)
-                        .plus(coords)
+                    coords.neighbours(diagonal = false, self = true)
                         .filter { it in valley && valley[it] }
                 }
                 .toSet()
