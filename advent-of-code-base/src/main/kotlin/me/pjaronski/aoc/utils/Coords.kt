@@ -103,6 +103,10 @@ operator fun <T> Array<Array<T>>.contains(coords: Coords): Boolean {
     return coords.row in this.indices && coords.col in this[coords.row].indices
 }
 
+operator fun Array<String>.contains(coords: Coords): Boolean {
+    return coords.row in this.indices && coords.col in this[coords.row].indices
+}
+
 operator fun Array<IntArray>.contains(coords: Coords): Boolean {
     return coords.row in this.indices && coords.col in this[coords.row].indices
 }
