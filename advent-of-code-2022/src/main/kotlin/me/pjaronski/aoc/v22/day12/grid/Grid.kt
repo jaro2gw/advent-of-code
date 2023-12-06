@@ -1,5 +1,6 @@
 package me.pjaronski.aoc.v22.day12.grid
 
+import me.pjaronski.aoc.Presenter.newline
 import me.pjaronski.aoc.utils.Coords
 import me.pjaronski.aoc.utils.contains
 import me.pjaronski.aoc.utils.get
@@ -41,5 +42,5 @@ class Grid(
                 }
                 .joinToString(separator = "")
         }
-        .joinToString(separator = System.lineSeparator())
+        .joinToString(separator = newline)
 }

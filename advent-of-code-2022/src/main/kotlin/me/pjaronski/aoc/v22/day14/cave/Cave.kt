@@ -1,5 +1,6 @@
 package me.pjaronski.aoc.v22.day14.cave
 
+import me.pjaronski.aoc.Presenter.newline
 import me.pjaronski.aoc.utils.*
 import me.pjaronski.aoc.v22.day14.cave.CaveElement.*
 
@@ -85,7 +86,7 @@ class Cave(
         return units
     }
 
-    override fun toString(): String = elements.joinToString(separator = System.lineSeparator()) { array ->
+    override fun toString(): String = elements.joinToString(separator = newline) { array ->
         array.joinToString(separator = "") { it.value }
     }
 }

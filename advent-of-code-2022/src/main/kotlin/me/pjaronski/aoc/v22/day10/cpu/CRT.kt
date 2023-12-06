@@ -1,6 +1,6 @@
 package me.pjaronski.aoc.v22.day10.cpu
 
-import java.lang.System.lineSeparator
+import me.pjaronski.aoc.Presenter.newline
 
 class CRT {
     private val board = Array(6) {
@@ -11,7 +11,7 @@ class CRT {
         board[row][col] = lit
     }
 
-    override fun toString(): String = board.joinToString(separator = lineSeparator()) { pixels ->
+    override fun toString(): String = board.joinToString(separator = newline) { pixels ->
         pixels.joinToString(separator = "") { lit ->
             if (lit) "#"
             else "."

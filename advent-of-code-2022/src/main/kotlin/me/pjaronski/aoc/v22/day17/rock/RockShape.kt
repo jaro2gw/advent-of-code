@@ -1,5 +1,6 @@
 package me.pjaronski.aoc.v22.day17.rock
 
+import me.pjaronski.aoc.Presenter.newline
 import me.pjaronski.aoc.utils.Coords
 
 class RockShape private constructor(
@@ -65,9 +66,7 @@ class RockShape private constructor(
     }
 
     override fun toString(): String = shape.reversed()
-        .joinToString(
-            separator = System.lineSeparator()
-        ) { cells ->
+        .joinToString(separator = newline) { cells ->
             cells.joinToString(separator = "") {
                 if (it) "#"
                 else "."
