@@ -3,6 +3,7 @@ package me.pjaronski.aoc.v22.day22.board
 import me.pjaronski.aoc.utils.Coords
 import me.pjaronski.aoc.utils.Direction
 import me.pjaronski.aoc.utils.Direction.EAST
+import me.pjaronski.aoc.utils.Turn
 import me.pjaronski.aoc.utils.get
 import me.pjaronski.aoc.v22.day22.board.Tile.*
 

@@ -12,7 +12,7 @@ import me.pjaronski.aoc.v22.day22.board.Board
 import me.pjaronski.aoc.v22.day22.board.Board.State
 import me.pjaronski.aoc.v22.day22.board.Cube
 import me.pjaronski.aoc.v22.day22.board.Tile
-import me.pjaronski.aoc.v22.day22.board.Turn
+import me.pjaronski.aoc.utils.Turn
 
 fun main() = present(
     solution = Solution22(
@@ -34,7 +34,7 @@ class Solution22(private val transitions: Input) : Solution<Int, Int> {
     private fun turns(line: String): List<Turn> = TURN_REGEX.findAll(line)
         .map { it.groupValues[1] }
         .map { it.single() }
-        .map { Turn.fromChar(it) }
+        .map { Turn.parse(it) }
         .toList()
 
     private fun moves(line: String): List<Int> = MOVE_REGEX.findAll(line)
