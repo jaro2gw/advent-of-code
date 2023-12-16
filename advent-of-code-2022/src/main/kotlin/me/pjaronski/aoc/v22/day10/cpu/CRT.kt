@@ -12,7 +12,7 @@ class CRT {
     }
 
     override fun toString(): String = board.toString2D { lit ->
-        if (lit) "#"
-        else "."
+        if (lit) '#'
+        else '.'
     }
 }

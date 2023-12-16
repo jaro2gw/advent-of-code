@@ -8,5 +8,7 @@ enum class Direction(dr: Int, dc: Int) {
 
     val vector = Coords(row = dr, col = dc)
 
+    val opposite: Direction by lazy { entries[(ordinal + 2) % 4] }
+
     override fun toString(): String = name.take(1)
 }

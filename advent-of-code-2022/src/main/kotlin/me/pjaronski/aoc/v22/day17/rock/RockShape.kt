@@ -66,8 +66,9 @@ class RockShape private constructor(
     }
 
     override fun toString(): String = shape.reversed()
+        .toTypedArray()
         .toString2D {
-            if (it) "#"
-            else "."
+            if (it) '#'
+            else '.'
         }
 }
