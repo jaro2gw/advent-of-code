@@ -1,9 +1,9 @@
 package me.pjaronski.aoc.v22.day12.grid
 
-import me.pjaronski.aoc.Presenter.newline
 import me.pjaronski.aoc.utils.Coords
 import me.pjaronski.aoc.utils.contains
 import me.pjaronski.aoc.utils.get
+import me.pjaronski.aoc.utils.toString2D
 
 class Grid(
     private val elevation: Array<IntArray>,
@@ -32,15 +32,13 @@ class Grid(
 
     override fun toString(): String = elevation
         .mapIndexed { row, ints ->
-            ints
-                .mapIndexed { col, i ->
-                    when (Coords(row, col)) {
-                        start -> 'S'
-                        end -> 'E'
-                        else -> alphabet[i]
-                    }
+            ints.mapIndexed { col, i ->
+                when (Coords(row, col)) {
+                    start -> 'S'
+                    end -> 'E'
+                    else -> alphabet[i]
                 }
-                .joinToString(separator = "")
+            }
         }
-        .joinToString(separator = newline)
+        .toString2D()
 }

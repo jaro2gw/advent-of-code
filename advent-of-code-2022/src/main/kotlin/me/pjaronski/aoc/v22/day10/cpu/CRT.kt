@@ -1,6 +1,6 @@
 package me.pjaronski.aoc.v22.day10.cpu
 
-import me.pjaronski.aoc.Presenter.newline
+import me.pjaronski.aoc.utils.toString2D
 
 class CRT {
     private val board = Array(6) {
@@ -11,10 +11,8 @@ class CRT {
         board[row][col] = lit
     }
 
-    override fun toString(): String = board.joinToString(separator = newline) { pixels ->
-        pixels.joinToString(separator = "") { lit ->
-            if (lit) "#"
-            else "."
-        }
+    override fun toString(): String = board.toString2D { lit ->
+        if (lit) "#"
+        else "."
     }
 }

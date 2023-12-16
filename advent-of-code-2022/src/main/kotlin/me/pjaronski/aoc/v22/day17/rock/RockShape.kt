@@ -1,7 +1,7 @@
 package me.pjaronski.aoc.v22.day17.rock
 
-import me.pjaronski.aoc.Presenter.newline
 import me.pjaronski.aoc.utils.Coords
+import me.pjaronski.aoc.utils.toString2D
 
 class RockShape private constructor(
     private val shape: Array<BooleanArray>
@@ -66,10 +66,8 @@ class RockShape private constructor(
     }
 
     override fun toString(): String = shape.reversed()
-        .joinToString(separator = newline) { cells ->
-            cells.joinToString(separator = "") {
-                if (it) "#"
-                else "."
-            }
+        .toString2D {
+            if (it) "#"
+            else "."
         }
 }

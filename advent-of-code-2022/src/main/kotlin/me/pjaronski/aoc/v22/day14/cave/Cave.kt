@@ -1,11 +1,11 @@
 package me.pjaronski.aoc.v22.day14.cave
 
-import me.pjaronski.aoc.Presenter.newline
 import me.pjaronski.aoc.utils.Coords
 import me.pjaronski.aoc.utils.MinMax
 import me.pjaronski.aoc.utils.contains
 import me.pjaronski.aoc.utils.get
 import me.pjaronski.aoc.utils.set
+import me.pjaronski.aoc.utils.toString2D
 import me.pjaronski.aoc.v22.day14.cave.CaveElement.LEAK
 import me.pjaronski.aoc.v22.day14.cave.CaveElement.NONE
 import me.pjaronski.aoc.v22.day14.cave.CaveElement.ROCK
@@ -93,7 +93,5 @@ class Cave(
         return units
     }
 
-    override fun toString(): String = elements.joinToString(separator = newline) { array ->
-        array.joinToString(separator = "") { it.value }
-    }
+    override fun toString(): String = elements.toString2D { it.value }
 }
