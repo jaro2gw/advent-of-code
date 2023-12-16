@@ -1,7 +1,9 @@
 package me.pjaronski.aoc.v22.day13.packet
 
 import me.pjaronski.aoc.utils.number
-import me.pjaronski.aoc.v22.day13.packet.PacketTokenizer.Token.*
+import me.pjaronski.aoc.v22.day13.packet.PacketTokenizer.Token.BRACKET_L
+import me.pjaronski.aoc.v22.day13.packet.PacketTokenizer.Token.BRACKET_R
+import me.pjaronski.aoc.v22.day13.packet.PacketTokenizer.Token.NUMBER
 
 class PacketTokenizer {
     sealed class Token {

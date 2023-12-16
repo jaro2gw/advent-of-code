@@ -1,6 +1,12 @@
 package me.pjaronski.aoc.v23.day07.card
 
-import me.pjaronski.aoc.v23.day07.card.CardHandType.*
+import me.pjaronski.aoc.v23.day07.card.CardHandType.FIVE_KIND
+import me.pjaronski.aoc.v23.day07.card.CardHandType.FOUR_KIND
+import me.pjaronski.aoc.v23.day07.card.CardHandType.FULL_HOUSE
+import me.pjaronski.aoc.v23.day07.card.CardHandType.HIGH_CARD
+import me.pjaronski.aoc.v23.day07.card.CardHandType.ONE_PAIR
+import me.pjaronski.aoc.v23.day07.card.CardHandType.THREE_KIND
+import me.pjaronski.aoc.v23.day07.card.CardHandType.TWO_PAIR
 
 data class SimpleCardHand(
     override val cards: List<Int>,

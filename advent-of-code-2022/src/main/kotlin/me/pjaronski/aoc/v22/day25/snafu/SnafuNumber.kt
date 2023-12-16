@@ -1,6 +1,6 @@
 package me.pjaronski.aoc.v22.day25.snafu
 
-import java.util.*
+import java.util.LinkedList
 
 object SnafuNumber {
     fun toLong(snafu: String): Long {

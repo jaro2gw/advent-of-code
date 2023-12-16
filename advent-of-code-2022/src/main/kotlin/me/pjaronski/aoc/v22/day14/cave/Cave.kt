@@ -1,8 +1,15 @@
 package me.pjaronski.aoc.v22.day14.cave
 
 import me.pjaronski.aoc.Presenter.newline
-import me.pjaronski.aoc.utils.*
-import me.pjaronski.aoc.v22.day14.cave.CaveElement.*
+import me.pjaronski.aoc.utils.Coords
+import me.pjaronski.aoc.utils.MinMax
+import me.pjaronski.aoc.utils.contains
+import me.pjaronski.aoc.utils.get
+import me.pjaronski.aoc.utils.set
+import me.pjaronski.aoc.v22.day14.cave.CaveElement.LEAK
+import me.pjaronski.aoc.v22.day14.cave.CaveElement.NONE
+import me.pjaronski.aoc.v22.day14.cave.CaveElement.ROCK
+import me.pjaronski.aoc.v22.day14.cave.CaveElement.SAND
 
 class Cave(
     rocks: List<List<Coords>>,

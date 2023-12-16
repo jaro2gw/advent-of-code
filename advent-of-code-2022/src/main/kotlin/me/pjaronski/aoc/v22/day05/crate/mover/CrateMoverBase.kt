@@ -1,6 +1,6 @@
 package me.pjaronski.aoc.v22.day05.crate.mover
 
-import java.util.*
+import java.util.Stack
 
 sealed class CrateMoverBase(final override val size: Int) : CrateMover {
     protected val stacks = Array(size) {

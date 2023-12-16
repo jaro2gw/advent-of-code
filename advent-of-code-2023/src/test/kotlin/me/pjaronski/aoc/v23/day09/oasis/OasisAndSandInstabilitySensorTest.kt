@@ -1,6 +1,6 @@
 package me.pjaronski.aoc.v23.day09.oasis
 
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class OasisAndSandInstabilitySensorTest {
@@ -31,7 +31,6 @@ class OasisAndSandInstabilitySensorTest {
         val prediction = OasisAndSandInstabilitySensor.predict(values)
         assertEquals(8, prediction)
     }
-
 
 
     @Test

@@ -8,8 +8,7 @@ fun split(input: Input, test: (String) -> Boolean): Sequence<List<String>> = seq
         if (test(line)) {
             yield(buffer)
             buffer = mutableListOf()
-        }
-        else buffer.add(line)
+        } else buffer.add(line)
     }
     if (buffer.isNotEmpty()) yield(buffer)
 }

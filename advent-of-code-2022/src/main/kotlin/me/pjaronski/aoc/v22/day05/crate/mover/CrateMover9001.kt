@@ -1,6 +1,6 @@
 package me.pjaronski.aoc.v22.day05.crate.mover
 
-import java.util.*
+import java.util.Stack
 
 class CrateMover9001(size: Int) : CrateMoverBase(size) {
     override fun perform(operation: CrateMoverOperation) {

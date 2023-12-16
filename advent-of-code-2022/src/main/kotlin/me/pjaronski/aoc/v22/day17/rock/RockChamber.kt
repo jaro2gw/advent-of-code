@@ -1,6 +1,10 @@
 package me.pjaronski.aoc.v22.day17.rock
 
-import me.pjaronski.aoc.utils.*
+import me.pjaronski.aoc.utils.Coords
+import me.pjaronski.aoc.utils.contains
+import me.pjaronski.aoc.utils.get
+import me.pjaronski.aoc.utils.infinite
+import me.pjaronski.aoc.utils.set
 
 class RockChamber(
     private val width: Int,

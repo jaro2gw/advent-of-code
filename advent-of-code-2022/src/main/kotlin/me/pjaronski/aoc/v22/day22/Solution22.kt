@@ -5,14 +5,17 @@ import me.pjaronski.aoc.Presenter.present
 import me.pjaronski.aoc.Solution
 import me.pjaronski.aoc.utils.Coords
 import me.pjaronski.aoc.utils.Direction
-import me.pjaronski.aoc.utils.Direction.*
+import me.pjaronski.aoc.utils.Direction.EAST
+import me.pjaronski.aoc.utils.Direction.NORTH
+import me.pjaronski.aoc.utils.Direction.SOUTH
+import me.pjaronski.aoc.utils.Direction.WEST
 import me.pjaronski.aoc.utils.NUMBER_PATTERN
+import me.pjaronski.aoc.utils.Turn
 import me.pjaronski.aoc.utils.split
 import me.pjaronski.aoc.v22.day22.board.Board
 import me.pjaronski.aoc.v22.day22.board.Board.State
 import me.pjaronski.aoc.v22.day22.board.Cube
 import me.pjaronski.aoc.v22.day22.board.Tile
-import me.pjaronski.aoc.utils.Turn
 
 fun main() = present(
     solution = Solution22(

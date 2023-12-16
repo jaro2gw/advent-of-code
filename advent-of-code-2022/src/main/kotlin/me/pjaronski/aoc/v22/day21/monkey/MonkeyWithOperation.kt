@@ -1,7 +1,10 @@
 package me.pjaronski.aoc.v22.day21.monkey
 
 import me.pjaronski.aoc.v22.day21.operation.Operation
-import me.pjaronski.aoc.v22.day21.operation.Operation.*
+import me.pjaronski.aoc.v22.day21.operation.Operation.DIV
+import me.pjaronski.aoc.v22.day21.operation.Operation.MINUS
+import me.pjaronski.aoc.v22.day21.operation.Operation.PLUS
+import me.pjaronski.aoc.v22.day21.operation.Operation.TIMES
 
 class MonkeyWithOperation(
     name: String,

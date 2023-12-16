@@ -1,6 +1,6 @@
 package me.pjaronski.aoc.v22.day15.sensor
 
-import java.util.*
+import java.util.TreeSet
 import kotlin.math.max
 import kotlin.math.min
 

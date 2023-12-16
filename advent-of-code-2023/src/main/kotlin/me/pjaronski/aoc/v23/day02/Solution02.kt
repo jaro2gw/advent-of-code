@@ -3,7 +3,9 @@ package me.pjaronski.aoc.v23.day02
 import me.pjaronski.aoc.Input
 import me.pjaronski.aoc.Presenter.present
 import me.pjaronski.aoc.Solution
-import me.pjaronski.aoc.v23.day02.game.CubeColor.*
+import me.pjaronski.aoc.v23.day02.game.CubeColor.blue
+import me.pjaronski.aoc.v23.day02.game.CubeColor.green
+import me.pjaronski.aoc.v23.day02.game.CubeColor.red
 import me.pjaronski.aoc.v23.day02.game.Game
 
 fun main() = present(Solution02)

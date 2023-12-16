@@ -2,7 +2,9 @@ package me.pjaronski.aoc.v22.day22.board
 
 import me.pjaronski.aoc.utils.contains
 import me.pjaronski.aoc.utils.get
-import me.pjaronski.aoc.v22.day22.board.Tile.*
+import me.pjaronski.aoc.v22.day22.board.Tile.BLOCKED
+import me.pjaronski.aoc.v22.day22.board.Tile.BORDER
+import me.pjaronski.aoc.v22.day22.board.Tile.EMPTY
 
 class Cube(
     tiles: Array<Array<Tile>>,

@@ -3,9 +3,13 @@ package me.pjaronski.aoc.v22.day02
 import me.pjaronski.aoc.Input
 import me.pjaronski.aoc.Presenter.present
 import me.pjaronski.aoc.Solution
-import me.pjaronski.aoc.v22.day02.rps.RockPaperScissorsGameOutcome.*
+import me.pjaronski.aoc.v22.day02.rps.RockPaperScissorsGameOutcome.DRAW
+import me.pjaronski.aoc.v22.day02.rps.RockPaperScissorsGameOutcome.LOSE
+import me.pjaronski.aoc.v22.day02.rps.RockPaperScissorsGameOutcome.WIN
 import me.pjaronski.aoc.v22.day02.rps.RockPaperScissorsGameRound
-import me.pjaronski.aoc.v22.day02.rps.RockPaperScissorsHandShape.*
+import me.pjaronski.aoc.v22.day02.rps.RockPaperScissorsHandShape.PAPER
+import me.pjaronski.aoc.v22.day02.rps.RockPaperScissorsHandShape.ROCK
+import me.pjaronski.aoc.v22.day02.rps.RockPaperScissorsHandShape.SCISSORS
 
 fun main() = present(Solution02)
 

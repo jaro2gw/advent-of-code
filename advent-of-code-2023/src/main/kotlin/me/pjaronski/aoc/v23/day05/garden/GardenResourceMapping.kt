@@ -1,6 +1,6 @@
 package me.pjaronski.aoc.v23.day05.garden
 
-import java.util.*
+import java.util.TreeMap
 
 class GardenResourceMapping(rules: List<Triple<Long, Long, Long>>) {
     private data class SourceToTargetMapping(

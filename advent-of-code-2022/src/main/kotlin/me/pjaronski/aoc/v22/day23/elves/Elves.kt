@@ -2,7 +2,10 @@ package me.pjaronski.aoc.v22.day23.elves
 
 import me.pjaronski.aoc.utils.Coords
 import me.pjaronski.aoc.utils.Direction
-import me.pjaronski.aoc.utils.Direction.*
+import me.pjaronski.aoc.utils.Direction.EAST
+import me.pjaronski.aoc.utils.Direction.NORTH
+import me.pjaronski.aoc.utils.Direction.SOUTH
+import me.pjaronski.aoc.utils.Direction.WEST
 import me.pjaronski.aoc.utils.infinite
 
 class Elves {

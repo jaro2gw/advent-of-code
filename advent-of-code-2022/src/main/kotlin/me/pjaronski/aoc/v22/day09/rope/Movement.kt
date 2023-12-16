@@ -1,7 +1,10 @@
 package me.pjaronski.aoc.v22.day09.rope
 
 import me.pjaronski.aoc.utils.Direction
-import me.pjaronski.aoc.utils.Direction.*
+import me.pjaronski.aoc.utils.Direction.EAST
+import me.pjaronski.aoc.utils.Direction.NORTH
+import me.pjaronski.aoc.utils.Direction.SOUTH
+import me.pjaronski.aoc.utils.Direction.WEST
 
 data class Movement(
     val direction: Direction,

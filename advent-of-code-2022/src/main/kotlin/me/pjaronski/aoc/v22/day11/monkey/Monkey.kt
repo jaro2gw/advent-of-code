@@ -1,6 +1,6 @@
 package me.pjaronski.aoc.v22.day11.monkey
 
-import java.util.*
+import java.util.LinkedList
 
 class Monkey(
     items: List<Long>,

@@ -1,6 +1,6 @@
 package me.pjaronski.aoc.v22.day16.volcano
 
-import java.util.*
+import java.util.LinkedList
 
 class Volcano(
     private val initial: Valve,

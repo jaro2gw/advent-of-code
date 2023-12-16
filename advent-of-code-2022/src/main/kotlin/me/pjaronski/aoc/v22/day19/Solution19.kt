@@ -8,7 +8,9 @@ import me.pjaronski.aoc.v22.day19.blueprint.RobotBlueprint
 import me.pjaronski.aoc.v22.day19.blueprint.RobotFactory
 import me.pjaronski.aoc.v22.day19.excavation.Excavation
 import me.pjaronski.aoc.v22.day19.resource.Resource
-import me.pjaronski.aoc.v22.day19.resource.Resource.*
+import me.pjaronski.aoc.v22.day19.resource.Resource.clay
+import me.pjaronski.aoc.v22.day19.resource.Resource.obsidian
+import me.pjaronski.aoc.v22.day19.resource.Resource.ore
 import me.pjaronski.aoc.v22.day19.resource.ResourceArray
 
 fun main() = present(Solution19)

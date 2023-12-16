@@ -1,6 +1,6 @@
 package me.pjaronski.aoc.v23.day05.garden
 
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class GardenResourceMappingTest {

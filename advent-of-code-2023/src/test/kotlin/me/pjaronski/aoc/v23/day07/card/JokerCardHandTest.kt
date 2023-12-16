@@ -1,7 +1,13 @@
 package me.pjaronski.aoc.v23.day07.card
 
-import me.pjaronski.aoc.v23.day07.card.CardHandType.*
-import org.junit.jupiter.api.Assertions.*
+import me.pjaronski.aoc.v23.day07.card.CardHandType.FIVE_KIND
+import me.pjaronski.aoc.v23.day07.card.CardHandType.FOUR_KIND
+import me.pjaronski.aoc.v23.day07.card.CardHandType.FULL_HOUSE
+import me.pjaronski.aoc.v23.day07.card.CardHandType.HIGH_CARD
+import me.pjaronski.aoc.v23.day07.card.CardHandType.ONE_PAIR
+import me.pjaronski.aoc.v23.day07.card.CardHandType.THREE_KIND
+import me.pjaronski.aoc.v23.day07.card.CardHandType.TWO_PAIR
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.DynamicTest.dynamicTest
 import org.junit.jupiter.api.TestFactory
 
@@ -27,7 +33,7 @@ class JokerCardHandTest {
         "88JJJ 117" to Pair(FIVE_KIND, 117),
         "8JJJJ 118" to Pair(FIVE_KIND, 118),
         "JJJJJ 119" to Pair(FIVE_KIND, 119),
-    ).map {(line, expected) ->
+    ).map { (line, expected) ->
         val (type, bid) = expected
         dynamicTest("should parse the card hand correctly [$line] -> $type") {
             val hand = JokerCardHand.parse(line)

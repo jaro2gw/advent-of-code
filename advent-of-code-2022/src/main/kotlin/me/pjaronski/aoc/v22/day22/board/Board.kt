@@ -5,7 +5,9 @@ import me.pjaronski.aoc.utils.Direction
 import me.pjaronski.aoc.utils.Direction.EAST
 import me.pjaronski.aoc.utils.Turn
 import me.pjaronski.aoc.utils.get
-import me.pjaronski.aoc.v22.day22.board.Tile.*
+import me.pjaronski.aoc.v22.day22.board.Tile.BLOCKED
+import me.pjaronski.aoc.v22.day22.board.Tile.BORDER
+import me.pjaronski.aoc.v22.day22.board.Tile.EMPTY
 
 open class Board(
     protected val tiles: Array<Array<Tile>>,

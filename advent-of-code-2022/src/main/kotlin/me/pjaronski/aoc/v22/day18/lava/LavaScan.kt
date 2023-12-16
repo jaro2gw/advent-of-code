@@ -1,7 +1,7 @@
 package me.pjaronski.aoc.v22.day18.lava
 
 import me.pjaronski.aoc.utils.MinMax
-import java.util.*
+import java.util.LinkedList
 
 class LavaScan {
     private fun neighbours(droplet: LavaDroplet): List<LavaDroplet> = listOf(
