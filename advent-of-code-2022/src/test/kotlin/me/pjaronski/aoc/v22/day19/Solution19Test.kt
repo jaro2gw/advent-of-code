@@ -5,14 +5,15 @@ import me.pjaronski.aoc.Presenter.present
 import me.pjaronski.aoc.SolutionTest
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestFactory
 
 fun main() = present(Solution19, Input(Solution19Test::class.java, "example.txt"))
 
 class Solution19Test : SolutionTest<Int, Int>(Solution19) {
-    override val expected1 = 33
-    override val expected2 = 3472
+    override val expected1 = sequenceOf(33)
+    override val expected2 = sequenceOf(3472)
 
-    @Test
+    @TestFactory
     @Disabled(
         """
         For some reason, part 2 test runs for a longer time with the example input than with the actual input.

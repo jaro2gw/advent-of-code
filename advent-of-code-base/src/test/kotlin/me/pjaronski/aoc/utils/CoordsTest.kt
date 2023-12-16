@@ -1,6 +1,5 @@
-package me.pjaronski.aoc.v22.utils
+package me.pjaronski.aoc.utils
 
-import me.pjaronski.aoc.utils.Coords
 import org.junit.jupiter.api.Test
 import kotlin.test.assertContentEquals
 

@@ -1,5 +1,12 @@
 package me.pjaronski.aoc.utils
 
+/** returns an infinitely repeating sequence of the provided [element] */
+fun <T> infinite(element: T): Sequence<T> = sequence {
+    while (true) {
+        yield(element)
+    }
+}
+
 /** returns an infinitely repeating sequence of the provided [elements] */
 fun <T> infinite(elements: Iterable<T>): Sequence<T> = sequence {
     while (true) {

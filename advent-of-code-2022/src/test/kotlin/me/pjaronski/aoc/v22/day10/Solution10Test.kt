@@ -4,7 +4,7 @@ import me.pjaronski.aoc.Presenter.newline
 import me.pjaronski.aoc.SolutionTest
 
 class Solution10Test : SolutionTest<Int, String>(Solution10) {
-    override val expected1 = 13140
+    override val expected1 = sequenceOf(13140)
     override val expected2 = """
         ##..##..##..##..##..##..##..##..##..##..
         ###...###...###...###...###...###...###.
@@ -12,5 +12,5 @@ class Solution10Test : SolutionTest<Int, String>(Solution10) {
         #####.....#####.....#####.....#####.....
         ######......######......######......####
         #######.......#######.......#######.....
-    """.trimIndent().replace("\n", newline)
+    """.trimIndent().replace("\n", newline).let { sequenceOf(it) }
 }

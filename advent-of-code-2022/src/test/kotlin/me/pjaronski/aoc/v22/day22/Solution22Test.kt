@@ -11,6 +11,6 @@ class Solution22Test : SolutionTest<Int, Int>(
         )
     )
 ) {
-    override val expected1 = 6032
-    override val expected2 = 5031
+    override val expected1 = sequenceOf(6032)
+    override val expected2 = sequenceOf(5031)
 }
