@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DynamicTest.dynamicTest
 import org.junit.jupiter.api.TestFactory
 
 abstract class SolutionTest<P1, P2>(
-    private val solution: Solution<P1, P2>
+    protected val solution: Solution<P1, P2>
 ) {
     protected open val inputs1: Sequence<String> = infinite("example.txt")
     protected abstract val expected1: Sequence<P1>
