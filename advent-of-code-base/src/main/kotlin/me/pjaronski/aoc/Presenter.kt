@@ -1,5 +1,7 @@
 package me.pjaronski.aoc
 
+import java.awt.Toolkit
+import kotlin.time.Duration.Companion.seconds
 import kotlin.time.measureTimedValue
 
 object Presenter {
@@ -14,6 +16,7 @@ object Presenter {
             val string = prefix + answer
             println("\tSolution: $string")
             println("\tDuration: $duration")
+            if (duration > 5.seconds) Toolkit.getDefaultToolkit().beep()
         }
     }
 
