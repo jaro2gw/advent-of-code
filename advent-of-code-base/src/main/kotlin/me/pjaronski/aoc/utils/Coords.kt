@@ -73,7 +73,10 @@ data class Coords(
 }
 
 // get
+
 operator fun <T> Array<Array<T>>.get(coords: Coords): T = this[coords.row][coords.col]
+
+operator fun Array<CharArray>.get(coords: Coords): Char = this[coords.row][coords.col]
 
 operator fun Array<IntArray>.get(coords: Coords): Int = this[coords.row][coords.col]
 
@@ -82,7 +85,12 @@ operator fun Array<BooleanArray>.get(coords: Coords): Boolean = this[coords.row]
 operator fun List<BooleanArray>.get(coords: Coords): Boolean = this[coords.row][coords.col]
 
 // set
+
 operator fun <T> Array<Array<T>>.set(coords: Coords, value: T) {
+    this[coords.row][coords.col] = value
+}
+
+operator fun Array<CharArray>.set(coords: Coords, value: Char) {
     this[coords.row][coords.col] = value
 }
 
@@ -99,11 +107,16 @@ operator fun List<BooleanArray>.set(coords: Coords, value: Boolean) {
 }
 
 // contains
+
 operator fun <T> Array<Array<T>>.contains(coords: Coords): Boolean {
     return coords.row in this.indices && coords.col in this[coords.row].indices
 }
 
 operator fun Array<String>.contains(coords: Coords): Boolean {
+    return coords.row in this.indices && coords.col in this[coords.row].indices
+}
+
+operator fun Array<CharArray>.contains(coords: Coords): Boolean {
     return coords.row in this.indices && coords.col in this[coords.row].indices
 }
 
