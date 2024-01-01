@@ -8,6 +8,8 @@ data class Coords(
     val col: Int,
 ) : Comparable<Coords> {
     companion object {
+        val ZERO = Coords(0, 0)
+
         /** [end] inclusive */
         fun path(start: Coords, end: Coords) = sequence {
             val r = (end.row - start.row).sign
@@ -58,10 +60,14 @@ data class Coords(
         col = this.col + coords.col,
     )
 
+    operator fun plus(direction: Direction): Coords = plus(direction.vector)
+
     operator fun minus(coords: Coords) = Coords(
         row = this.row - coords.row,
         col = this.col - coords.col,
     )
+
+    operator fun minus(direction: Direction): Coords = minus(direction.vector)
 
     override fun compareTo(other: Coords): Int {
         val comp = this.row.compareTo(other.row)
