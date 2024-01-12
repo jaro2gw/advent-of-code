@@ -8,7 +8,7 @@ data class Coords(
     val col: Int,
 ) : Comparable<Coords> {
     companion object {
-        val ZERO = Coords(0, 0)
+        val ORIGIN = Coords(0, 0)
 
         /** [end] inclusive */
         fun path(start: Coords, end: Coords) = sequence {

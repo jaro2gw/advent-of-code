@@ -1,7 +1,7 @@
 package me.pjaronski.aoc.v23.day16.beam
 
 import me.pjaronski.aoc.utils.Coords
-import me.pjaronski.aoc.utils.Coords.Companion.ZERO
+import me.pjaronski.aoc.utils.Coords.Companion.ORIGIN
 import me.pjaronski.aoc.utils.Direction
 import me.pjaronski.aoc.utils.Direction.EAST
 import me.pjaronski.aoc.utils.Direction.NORTH
@@ -17,7 +17,7 @@ import me.pjaronski.aoc.v23.day16.beam.Tile.SPLITTER_V
 import java.util.EnumSet
 
 object BeamGridSimulator {
-    fun energize(grid: Array<Array<Tile>>, start: Pair<Coords, Direction> = ZERO to EAST): Int {
+    fun energize(grid: Array<Array<Tile>>, start: Pair<Coords, Direction> = ORIGIN to EAST): Int {
         val steady = Array(grid.size) {
             Array(grid[it].size) {
                 EnumSet.noneOf(Direction::class.java)

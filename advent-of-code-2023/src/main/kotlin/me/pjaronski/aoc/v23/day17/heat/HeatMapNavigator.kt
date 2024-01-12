@@ -1,7 +1,7 @@
 package me.pjaronski.aoc.v23.day17.heat
 
 import me.pjaronski.aoc.utils.Coords
-import me.pjaronski.aoc.utils.Coords.Companion.ZERO
+import me.pjaronski.aoc.utils.Coords.Companion.ORIGIN
 import me.pjaronski.aoc.utils.Coords.Companion.manhattanDistance
 import me.pjaronski.aoc.utils.Direction
 import me.pjaronski.aoc.utils.Direction.EAST
@@ -52,8 +52,8 @@ object HeatMapNavigator {
             col = loss.last().lastIndex
         )
 
-        val start1 = PathExtension(ZERO, EAST)
-        val start2 = PathExtension(ZERO, SOUTH)
+        val start1 = PathExtension(ORIGIN, EAST)
+        val start2 = PathExtension(ORIGIN, SOUTH)
 
         val gScore = mutableMapOf<PathExtension, Int>()
         gScore[start1] = 0
