@@ -69,6 +69,8 @@ data class Coords(
 
     operator fun minus(direction: Direction): Coords = minus(direction.vector)
 
+    operator fun times(scale: Int): Coords = Coords(row = row * scale, col = col * scale)
+
     override fun compareTo(other: Coords): Int {
         val comp = this.row.compareTo(other.row)
         return if (comp != 0) comp
